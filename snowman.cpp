@@ -37,11 +37,11 @@ const std::vector<std::string> base = {" : ","\" \"","___","   "};
     string snowman (int num){
         std::string input = to_string(num);//put input to string
         std::string snow_guy = " ";
-        if (input.length() == valid_input){//checking string length for 8
+        if (input.length() == valid_input){//checking string length for valid input
             std::vector<int> instruction = {0,0,0,0,0,0,0,0};
 
 
-            for (int i =valid_input-1; i>=0 ; i-- ){
+            for (int i =valid_input-1; i>=0 ; i-- ){//insert the digits to the vectoer with range check
                 if (num%ten < min_digit || num%ten > max_digit){ 
                     throw std::out_of_range("Invalid Input");
                 }
@@ -49,7 +49,7 @@ const std::vector<std::string> base = {" : ","\" \"","___","   "};
                     instruction.at(i) =  (num%ten);
                     num = num / ten;
             }
-                
+            //building a snowman    
             snow_guy += hats[instruction[H]-1]+"\n";
             snow_guy += lefthand_up[instruction[X]-1]+ "(" ;
             snow_guy += eyes[instruction[L]-1];
