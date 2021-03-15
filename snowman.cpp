@@ -41,7 +41,7 @@ const std::vector<std::string> base = {" : ","\" \"","___","   "};
             std::vector<int> instruction = {0,0,0,0,0,0,0,0};
 
 
-            for (int i =valid_input-1; i>=0 ; i-- ){//insert the digits to the vectoer with range check
+            for (int i =valid_input-1; i>=0 ; i-- ){//insert the digits to the instruction vectoer with range check
                 if (num%ten < min_digit || num%ten > max_digit){ 
                     throw std::out_of_range("Invalid Input");
                 }
